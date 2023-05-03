@@ -5,14 +5,14 @@ var temperatureGaugeDiv = document.getElementById("temperature-gauge");
 var humidityGaugeDiv = document.getElementById("humidity-gauge");
 
 var graphConfig = {
-  displayModeBar: false,
+  displayModeBar: true,
   responsive: true,
 };
 
 // History Data
 var temperatureTrace = {
-  x: [1, 2, 3, 4, 5],
-  y: [25, 28, 24, 23, 31],
+  x: [],
+  y: [],
   name: "Temperature",
   mode: "lines+markers",
   type: "line",
@@ -37,7 +37,7 @@ var temperatureLayout = {
   colorway: ["#B22222"],
   //   width: 450,
   //   height: 260,
-  margin: { t: 30, b: 20, l: 0, r: 0, pad: 5 },
+  margin: { t: 30, b: 20, l: 10, r: 10, pad: 5 },
 };
 var humidityLayout = {
   autosize: true,

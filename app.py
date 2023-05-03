@@ -1,10 +1,13 @@
+import json
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 from random import random
 from threading import Lock
 from datetime import datetime
-import json
+from dht22_module import DHT22Module
+import board
 
+dht22_module = DHT22Module(board.D18)
 """
 Background Thread
 """
@@ -33,11 +36,13 @@ Generate random sequence of dummy sensor values and send it to our clients
 def background_thread():
     print("Generating random sensor values")
     while True:
-        temperature_sensor_value = round(random() * 100, 3)
-        humidity_sensor_value = round(random() * 100, 3)
+        # temperature_sensor_value = round(random() * 100, 3)
+        # humidity_sensor_value = round(random() * 100, 3)
+
+        temperature, humidity = dht22_module.get_sensor_readings()
         sensor_readings = {
-            "temperature": temperature_sensor_value,
-            "humidity": humidity_sensor_value,
+            "temperature": temperature,
+            "humidity": humidity,
         }
         sensor_json = json.dumps(sensor_readings)
 
