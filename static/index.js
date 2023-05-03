@@ -37,7 +37,7 @@ var temperatureLayout = {
   colorway: ["#B22222"],
   //   width: 450,
   //   height: 260,
-  margin: { t: 30, b: 20, l: 30, r: 0, pad: 5 },
+  margin: { t: 30, b: 20, l: 30, r: 20, pad: 0 },
 };
 var humidityLayout = {
   autosize: true,
@@ -51,7 +51,7 @@ var humidityLayout = {
   colorway: ["#00008B"],
   //   width: 450,
   //   height: 260,
-  margin: { t: 30, b: 20, l: 30, r: 0, pad: 5 },
+  margin: { t: 30, b: 20, l: 30, r: 20, pad: 0 },
 };
 var config = { responsive: true };
 
