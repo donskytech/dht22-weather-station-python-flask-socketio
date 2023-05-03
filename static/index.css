@@ -1,0 +1,28 @@
+body {
+  background-color: #f5f5f5;
+}
+.bg-white {
+  background-color: #fff;
+}
+.sidebar {
+  background-color: #fff;
+}
+.box {
+  background: #cf1b03;
+  width: calc(100% / 2 - 20px);
+  color: #fff;
+}
+.box .box-topic {
+  font-size: 20px;
+  font-weight: 500;
+}
+.box .number {
+  display: inline-block;
+  font-size: 35px;
+  margin-top: -6px;
+  font-weight: 500;
+}
+
+.box .indicator {
+  font-size: 48px;
+}
