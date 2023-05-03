@@ -5,7 +5,7 @@ var temperatureGaugeDiv = document.getElementById("temperature-gauge");
 var humidityGaugeDiv = document.getElementById("humidity-gauge");
 
 var graphConfig = {
-  displayModeBar: true,
+  displayModeBar: false,
   responsive: true,
 };
 
