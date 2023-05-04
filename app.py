@@ -8,9 +8,7 @@ from dht22_module import DHT22Module
 import board
 
 dht22_module = DHT22Module(board.D18)
-"""
-Background Thread
-"""
+
 thread = None
 thread_lock = Lock()
 
@@ -19,26 +17,10 @@ app.config["SECRET_KEY"] = "donsky!"
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 """
-Get current date time
+Background Thread
 """
-
-
-def get_current_datetime():
-    now = datetime.now()
-    return now.strftime("%m/%d/%Y %H:%M:%S")
-
-
-"""
-Generate random sequence of dummy sensor values and send it to our clients
-"""
-
-
 def background_thread():
-    print("Generating random sensor values")
     while True:
-        # temperature_sensor_value = round(random() * 100, 3)
-        # humidity_sensor_value = round(random() * 100, 3)
-
         temperature, humidity = dht22_module.get_sensor_readings()
         sensor_readings = {
             "temperature": temperature,
