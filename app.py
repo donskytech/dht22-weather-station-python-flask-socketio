@@ -31,7 +31,7 @@ def background_thread():
         sensor_json = json.dumps(sensor_readings)
 
         socketio.emit("updateSensorData", sensor_json)
-        socketio.sleep(2)
+        socketio.sleep(3)
 
 
 """
