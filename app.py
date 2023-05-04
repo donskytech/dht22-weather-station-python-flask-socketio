@@ -19,6 +19,8 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 """
 Background Thread
 """
+
+
 def background_thread():
     while True:
         temperature, humidity = dht22_module.get_sensor_readings()
@@ -29,7 +31,7 @@ def background_thread():
         sensor_json = json.dumps(sensor_readings)
 
         socketio.emit("updateSensorData", sensor_json)
-        socketio.sleep(1)
+        socketio.sleep(2)
 
 
 """
