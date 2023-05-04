@@ -54,7 +54,6 @@ def connect():
     global thread
     print("Client connected")
 
-    global thread
     with thread_lock:
         if thread is None:
             thread = socketio.start_background_task(background_thread)
