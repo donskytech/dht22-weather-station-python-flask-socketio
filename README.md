@@ -1,4 +1,4 @@
-# DHT22-Weather-Station-Python-Flask-Socketio  
+# Raspberry Pi DHT22 Weather Station Python Flask Socketio  
 A DHT Weather Station project using Python, Flask, Flask-SocketIO, and Bootstrap that displays real-time temperature and humidity sensor readings using your Raspberry Pi
 ![Featured Image - DHT22 Weather Station With Python, Flask, Flask-SocketIO](https://user-images.githubusercontent.com/69466026/236615315-5a7bba1c-9712-48bd-8718-29039850d655.jpg)  
   
