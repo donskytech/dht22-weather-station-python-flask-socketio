@@ -5,9 +5,11 @@ from random import random
 from threading import Lock
 from datetime import datetime
 from dht22_module import DHT22Module
-import board
 
-dht22_module = DHT22Module(board.D18)
+# import board
+
+# dht22_module = DHT22Module(board.D18)
+dht22_module = DHT22Module()
 
 thread = None
 thread_lock = Lock()

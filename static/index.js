@@ -1,8 +1,16 @@
-var temperatureHistoryDiv = document.getElementById("temperature-history");
-var humidityHistoryDiv = document.getElementById("humidity-history");
+tabLinks = document.querySelectorAll(".nav-link");
 
-var temperatureGaugeDiv = document.getElementById("temperature-gauge");
-var humidityGaugeDiv = document.getElementById("humidity-gauge");
+tabLinks.forEach(function (tab) {
+  tab.addEventListener("click", function (e) {
+    console.log(e.target.dataset.tabNumber);
+  });
+});
+
+var temperatureHistoryDiv1 = document.getElementById("temperature-history-1");
+var humidityHistoryDiv1 = document.getElementById("humidity-history-1");
+
+var temperatureGaugeDiv1 = document.getElementById("temperature-gauge-1");
+var humidityGaugeDiv1 = document.getElementById("humidity-gauge-1");
 
 var graphConfig = {
   displayModeBar: false,
@@ -26,7 +34,7 @@ var humidityTrace = {
 };
 
 var temperatureLayout = {
-  autosize: true,
+  autosize: false,
   title: {
     text: "Temperature",
   },
@@ -35,12 +43,12 @@ var temperatureLayout = {
     color: "#7f7f7f",
   },
   colorway: ["#B22222"],
-  //   width: 450,
-  //   height: 260,
+  width: 320,
+  height: 260,
   margin: { t: 30, b: 20, l: 30, r: 20, pad: 0 },
 };
 var humidityLayout = {
-  autosize: true,
+  autosize: false,
   title: {
     text: "Humidity",
   },
@@ -49,20 +57,20 @@ var humidityLayout = {
     color: "#7f7f7f",
   },
   colorway: ["#00008B"],
-  //   width: 450,
-  //   height: 260,
+  width: 320,
+  height: 260,
   margin: { t: 30, b: 20, l: 30, r: 20, pad: 0 },
 };
 var config = { responsive: true };
 
 Plotly.newPlot(
-  temperatureHistoryDiv,
+  temperatureHistoryDiv1,
   [temperatureTrace],
   temperatureLayout,
   graphConfig
 );
 Plotly.newPlot(
-  humidityHistoryDiv,
+  humidityHistoryDiv1,
   [humidityTrace],
   humidityLayout,
   graphConfig
@@ -115,10 +123,10 @@ var humidityData = [
   },
 ];
 
-var layout = { width: 350, height: 250, margin: { t: 0, b: 0, l: 0, r: 0 } };
+var layout = { width: 320, height: 250, margin: { t: 0, b: 0, l: 0, r: 0 } };
 
-Plotly.newPlot(temperatureGaugeDiv, temperatureData, layout, graphConfig);
-Plotly.newPlot(humidityGaugeDiv, humidityData, layout, graphConfig);
+Plotly.newPlot(temperatureGaugeDiv1, temperatureData, layout, graphConfig);
+Plotly.newPlot(humidityGaugeDiv1, humidityData, layout, graphConfig);
 
 // Temperature
 let newTempXArray = [];
@@ -147,8 +155,8 @@ function updateGauge(temperature, humidity) {
     value: humidity,
   };
 
-  Plotly.update(temperatureGaugeDiv, temperature_update);
-  Plotly.update(humidityGaugeDiv, humidity_update);
+  Plotly.update(temperatureGaugeDiv1, temperature_update);
+  Plotly.update(humidityGaugeDiv1, humidity_update);
 }
 
 function updateCharts(lineChartDiv, xArray, yArray, sensorRead) {
@@ -182,14 +190,14 @@ function updateSensorReadings(jsonResponse) {
 
   // Update Temperature Line Chart
   updateCharts(
-    temperatureHistoryDiv,
+    temperatureHistoryDiv1,
     newTempXArray,
     newTempYArray,
     temperature
   );
   // Update Humidity Line Chart
   updateCharts(
-    humidityHistoryDiv,
+    humidityHistoryDiv1,
     newHumidityXArray,
     newHumidityYArray,
     humidity
