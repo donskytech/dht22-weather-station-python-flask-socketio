@@ -18,7 +18,10 @@
       src="https://cdn.plot.ly/plotly-2.20.0.min.js"
       charset="utf-8"
     ></script>
-    <link href="../static/index.css" rel="stylesheet" />
+    <link
+      href="{{url_for('static', filename = 'index.css')}}"
+      rel="stylesheet"
+    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"
       integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ=="
@@ -82,232 +85,62 @@
               class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom border-danger"
             >
               <h1 class="h2 text-danger">DHT22 Weather Station Dashboard</h1>
+              <div class="row"></div>
             </div>
           </div>
           <div class="row">
-            <div class="col">
+            <div
+              class="d-flex p-2 justify-content-evenly overview-boxes justify-content-center"
+            >
               <div
-                class="readings align-items-center justify-content-center border rounded-2 p-4"
+                class="box d-flex align-items-center justify-content-center rounded-3 p-1 shadow"
               >
-                <h3>DHT22 #1</h3>
-                <div
-                  class="box d-flex rounded-3 p-2 shadow align-items-center justify-content-center"
-                >
-                  <div class="right-side">
-                    <div class="box-topic">Temperature</div>
-                    <div class="number" id="temperature">35 C</div>
-                  </div>
-                  <span class="indicator material-symbols-outlined"
-                    >device_thermostat</span
-                  >
+                <div class="right-side">
+                  <div class="box-topic">Temperature</div>
+                  <div class="number" id="temperature">35 C</div>
                 </div>
-                <div
-                  class="box d-flex align-items-center justify-content-center rounded-3 p-1 shadow"
+                <span class="indicator material-symbols-outlined"
+                  >device_thermostat</span
                 >
-                  <div class="right-side">
-                    <div class="box-topic">Humidity</div>
-                    <div class="number" id="humidity">40%</div>
-                  </div>
-                  <span class="indicator material-symbols-outlined">
-                    humidity_percentage
-                  </span>
-                </div>
               </div>
-            </div>
-            <div class="col">
               <div
-                class="readings align-items-center justify-content-center border rounded-2 p-4"
+                class="box d-flex align-items-center justify-content-center rounded-3 p-1 shadow"
               >
-                <h3>DHT22 #1</h3>
-                <div
-                  class="box d-flex rounded-3 p-2 shadow align-items-center justify-content-center"
-                >
-                  <div class="right-side">
-                    <div class="box-topic">Temperature</div>
-                    <div class="number" id="temperature">35 C</div>
-                  </div>
-                  <span class="indicator material-symbols-outlined"
-                    >device_thermostat</span
-                  >
+                <div class="right-side">
+                  <div class="box-topic">Humidity</div>
+                  <div class="number" id="humidity">40%</div>
                 </div>
-                <div
-                  class="box d-flex align-items-center justify-content-center rounded-3 p-1 shadow"
-                >
-                  <div class="right-side">
-                    <div class="box-topic">Humidity</div>
-                    <div class="number" id="humidity">40%</div>
-                  </div>
-                  <span class="indicator material-symbols-outlined">
-                    humidity_percentage
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="readings align-items-center justify-content-center border rounded-2 p-4"
-              >
-                <h3>DHT22 #1</h3>
-                <div
-                  class="box d-flex rounded-3 p-2 shadow align-items-center justify-content-center"
-                >
-                  <div class="right-side">
-                    <div class="box-topic">Temperature</div>
-                    <div class="number" id="temperature">35 C</div>
-                  </div>
-                  <span class="indicator material-symbols-outlined"
-                    >device_thermostat</span
-                  >
-                </div>
-                <div
-                  class="box d-flex align-items-center justify-content-center rounded-3 p-1 shadow"
-                >
-                  <div class="right-side">
-                    <div class="box-topic">Humidity</div>
-                    <div class="number" id="humidity">40%</div>
-                  </div>
-                  <span class="indicator material-symbols-outlined">
-                    humidity_percentage
-                  </span>
-                </div>
+                <span class="indicator material-symbols-outlined">
+                  humidity_percentage
+                </span>
               </div>
             </div>
           </div>
-          <div class="row mt-2">
-            <div class="col">
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#home"
-                    data-tab-number="1"
-                    type="button"
-                    role="tab"
-                    aria-controls="home"
-                    aria-selected="true"
-                  >
-                    DHT #1
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="profile-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#profile"
-                    data-tab-number="2"
-                    type="button"
-                    role="tab"
-                    aria-controls="profile"
-                    aria-selected="false"
-                  >
-                    DHT #2
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="messages-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#messages"
-                    data-tab-number="3"
-                    type="button"
-                    role="tab"
-                    aria-controls="messages"
-                    aria-selected="false"
-                  >
-                    DHT #3
-                  </button>
-                </li>
-              </ul>
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div
-                  class="tab-pane active"
-                  id="home"
-                  role="tabpanel"
-                  aria-labelledby="home-tab"
-                  tabindex="0"
-                >
-                  <div
-                    class="graphs d-flex flex-wrap bg-white justify-content-evenly p-5"
-                  >
-                    <div class="history-divs">
-                      <div id="temperature-history-1"></div>
-                    </div>
-                    <div class="historical-charts">
-                      <div class="history-divs">
-                        <div id="humidity-history-1"></div>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column gauge-charts">
-                      <div class="">
-                        <div id="temperature-gauge-1"></div>
-                      </div>
-                      <div class="">
-                        <div id="humidity-gauge-1"></div>
-                      </div>
-                    </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-8 bg-white">
+              <div class="p-3 border-top border-3 border-danger">
+                <div class="row mt-3 gx-5">
+                  <div class="col-md-12 col-lg-6 history-divs">
+                    <div id="temperature-history"></div>
+                  </div>
+                  <div class="col-md-12 col-lg-6 history-divs">
+                    <div id="humidity-history"></div>
                   </div>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="profile"
-                  role="tabpanel"
-                  aria-labelledby="profile-tab"
-                  tabindex="0"
-                >
-                  <div
-                    class="graphs d-flex flex-wrap bg-white justify-content-evenly p-5"
-                  >
-                    <div class="history-divs">
-                      <div id="temperature-history-2"></div>
-                    </div>
-                    <div class="historical-charts">
-                      <div class="history-divs">
-                        <div id="humidity-history-2"></div>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column gauge-charts">
-                      <div class="">
-                        <div id="temperature-gauge-2"></div>
-                      </div>
-                      <div class="">
-                        <div id="humidity-gauge-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="tab-pane"
-                  id="messages"
-                  role="tabpanel"
-                  aria-labelledby="messages-tab"
-                  tabindex="0"
-                >
-                  <div
-                    class="graphs d-flex flex-wrap bg-white justify-content-evenly p-5"
-                  >
-                    <div class="history-divs">
-                      <div id="temperature-history-3"></div>
-                    </div>
-                    <div class="historical-charts">
-                      <div class="history-divs">
-                        <div id="humidity-history-3"></div>
-                      </div>
-                    </div>
-                    <div class="d-flex flex-column gauge-charts">
-                      <div class="">
-                        <div id="temperature-gauge-3"></div>
-                      </div>
-                      <div class="">
-                        <div id="humidity-gauge-3"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-12 col-lg-4 d-flex flex-column align-items-center"
+            >
+              <div
+                class="row p-3 bg-light border-top border-3 border-danger bg-white"
+              >
+                <div id="temperature-gauge"></div>
+              </div>
+              <div
+                class="row p-3 bg-light border-top border-3 border-danger mt-4 bg-white"
+              >
+                <div id="humidity-gauge" class=""></div>
               </div>
             </div>
           </div>
@@ -324,6 +157,9 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="../static/index.js"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename = 'index.js') }}"
+    ></script>
   </body>
 </html>
