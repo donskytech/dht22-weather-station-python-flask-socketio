@@ -35,7 +35,10 @@ http://<IP>:5000
 ```
   
   
-### I AM WORKING ON A FOLLOW UP PROJECT THAT WILL DISPLAY MULTIPLE SENSORS AT THE SAME TIME
-This is still under construction:  
+### Multiple DHT22 IoT Weather Station Dashboard
+This is a follow up project to this project.  It will display dynamic number of DHT22 sensors and its readings.
+https://www.donskytech.com/raspberry-pi-weather-station/
+
+Code:
 https://github.com/donskytech/dht22-weather-station-python-flask-socketio-multiple-sensors
 ![Sample Web View](https://github.com/donskytech/dht22-weather-station-python-flask-socketio-multiple-sensors/assets/69466026/f4d2e0d8-f372-475e-9eff-859eb59e2845)
