@@ -42,3 +42,6 @@ https://www.donskytech.com/raspberry-pi-weather-station/
 Code:  
 https://github.com/donskytech/dht22-weather-station-python-flask-socketio-multiple-sensors
 ![Sample Web View](https://github.com/donskytech/dht22-weather-station-python-flask-socketio-multiple-sensors/assets/69466026/f4d2e0d8-f372-475e-9eff-859eb59e2845)
+  
+### How to auto-start this project when your Raspberry Pi boots or starts?  
+https://www.donskytech.com/raspberry-pi-how-to-start-python-script-on-boot/
